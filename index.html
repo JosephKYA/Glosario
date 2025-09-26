@@ -1,1 +1,84 @@
-Hola
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portafolio - Portada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#7c3aed;
+      --muted:#94a3b8;
+      --radius:12px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter, system-ui;
+      background: linear-gradient(180deg,var(--bg), #071026 120%);
+      color:#e6eef8;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      text-align:center;
+      padding:20px;
+    }
+    .wrapper{
+      max-width:800px;
+      padding:40px;
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 8px 24px rgba(0,0,0,0.4);
+    }
+    .logo{
+      width:80px;height:80px;
+      border-radius:18px;
+      margin:0 auto 20px;
+      background:linear-gradient(135deg,var(--accent),#06b6d4);
+      display:grid;place-items:center;
+      font-weight:800;font-size:28px;color:white;
+    }
+    h1{font-size:28px;margin-bottom:12px}
+    p{color:var(--muted);margin-bottom:24px;font-size:16px}
+    .btn{
+      display:inline-block;
+      padding:14px 28px;
+      border-radius:12px;
+      font-weight:600;
+      text-decoration:none;
+      color:white;
+      background:linear-gradient(135deg,var(--accent),#06b6d4);
+      transition:transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 16px rgba(0,0,0,0.4);
+    }
+    .content{
+      margin:30px 0;
+      padding:20px;
+      border:1px dashed rgba(255,255,255,0.08);
+      border-radius:12px;
+      font-size:15px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="logo">P</div>
+    <h1>Bienvenido a mi Portafolio</h1>
+    <p>Explora mis proyectos y recursos disponibles.</p>
+
+    <div class="content">
+      <!-- Aquí puedes agregar el contenido de tu portafolio -->
+      <p>Espacio reservado para la presentación de tu portafolio.</p>
+    </div>
+
+    <a href="glosario.html" class="btn">Ir al Glosario</a>
+  </div>
+</body>
+</html>
