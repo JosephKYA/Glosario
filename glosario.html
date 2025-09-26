@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Glosario interactivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="responsive.css">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#7c3aed;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --radius:12px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, system-ui;
+      background: linear-gradient(180deg,var(--bg), #071026 120%);
+      color:#e6eef8;
+      padding:28px;
+    }
+    .container{max-width:1100px;margin:0 auto}
+    header{display:flex;gap:20px;align-items:center;justify-content:space-between;margin-bottom:22px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{
+      width:56px;height:56px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),#06b6d4);
+      display:grid;place-items:center;font-weight:800;font-size:20px;color:white;
+    }
+    h1{margin:0;font-size:20px}
+    p.lead{margin:0;color:var(--muted);font-size:13px}
+    .search{
+      background:var(--glass);border:1px solid rgba(255,255,255,0.03);
+      padding:10px 12px;border-radius:12px;display:flex;gap:8px;align-items:center;
+      min-width:320px;
+    }
+    .search input{background:transparent;border:0;outline:none;color:inherit;font-size:14px;width:260px}
+    main{display:grid;grid-template-columns:280px 1fr;gap:20px}
+    .sidebar{background:var(--card);padding:14px;border-radius:var(--radius);height:calc(100vh - 160px);overflow:auto}
+    .letters{display:flex;flex-wrap:wrap;gap:8px}
+    .letter{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;background:var(--glass-2);cursor:pointer;border:1px solid rgba(255,255,255,0.02)}
+    .letter.active{background:linear-gradient(180deg,rgba(124,58,237,0.18),rgba(6,182,212,0.08));border:1px solid rgba(124,58,237,0.18);color:var(--accent);font-weight:700}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:14px;border-radius:12px;margin-bottom:12px;display:flex;gap:12px;align-items:flex-start}
+    .tag{width:56px;height:56px;border-radius:10px;display:grid;place-items:center;font-weight:700;font-size:18px;background:linear-gradient(135deg,var(--accent),#06b6d4);color:white}
+    .meta{flex:1}
+    .term{display:flex;align-items:center;gap:8px}
+    .term h3{margin:0;font-size:16px}
+    .desc{margin-top:8px;color:#d7e6ff;opacity:0.95;font-size:14px}
+    .ref{margin-top:6px;color:var(--muted);font-size:13px;font-style:italic}
+    .empty{padding:30px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px dashed rgba(255,255,255,0.03);text-align:center;color:var(--muted)}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:880px){main{grid-template-columns:1fr;}.sidebar{height:auto}.search input{width:140px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">G</div>
+        <div>
+          <h1>Glosario Interactivo</h1>
+          <p class="lead">Consulta los conceptos fácilmente.</p>
+        </div>
+      </div>
+      <div class="search" role="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+          <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
+          <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+        </svg>
+        <input id="searchInput" placeholder="Buscar término (ej. memoria flash)" aria-label="Buscar término" />
+      </div>
+    </header>
+
+    <main>
+      <aside class="sidebar">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <strong>Índice</strong>
+          <span class="small">Haz clic para filtrar</span>
+        </div>
+        <div class="letters" id="letters"></div>
+      </aside>
+
+      <section class="glossary-wrap">
+        <div id="glossaryList"></div>
+        <div class="empty" id="emptyState" style="display:none">No se encontraron términos.</div>
+        <footer>Glosario de conceptos — referencias incluidas.</footer>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    let glossaryData = [];
+
+    async function loadData() {
+      const res = await fetch("conceptos.json"); // carga el archivo externo
+      glossaryData = await res.json();
+      renderLetters();
+      renderList(glossaryData);
+    }
+
+    const lettersEl = document.getElementById('letters');
+    const glossaryList = document.getElementById('glossaryList');
+    const searchInput = document.getElementById('searchInput');
+    const emptyState = document.getElementById('emptyState');
+
+    function normalizeText(t){
+      return t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    }
+
+    function renderLetters(){
+      const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+      lettersEl.innerHTML = '';
+      const all = document.createElement('button');
+      all.className='letter active'; all.textContent='Todas'; all.style.width='86px';
+      all.addEventListener('click', ()=>{ clearFilters(); });
+      lettersEl.appendChild(all);
+      letters.forEach(l=>{
+        const btn = document.createElement('button');
+        btn.className='letter'; btn.textContent=l; btn.type='button';
+        btn.addEventListener('click', ()=>{ filterByLetter(l); document.querySelectorAll('.letter').forEach(x=>x.classList.remove('active')); btn.classList.add('active'); });
+        lettersEl.appendChild(btn);
+      });
+    }
+
+    function clearFilters(){
+      document.querySelectorAll('.letter').forEach(x=>x.classList.remove('active'));
+      document.querySelector('.letter')?.classList.add('active');
+      searchInput.value = '';
+      renderList(glossaryData);
+    }
+
+    function filterByLetter(letter){
+      const matches = glossaryData.filter(i => normalizeText(i.term).startsWith(letter.toLowerCase()));
+      renderList(matches);
+    }
+
+    function highlight(text, query){
+      if(!query) return escapeHtml(text);
+      const q = query.replace(/[-/\\\\^$*+?.()|[\\]{}]/g, '\\\\$&');
+      const re = new RegExp(q,'ig');
+      return escapeHtml(text).replace(re, m => `<mark style="background:rgba(124,58,237,0.22);padding:0 2px;border-radius:3px;color:inherit">${m}</mark>`);
+    }
+
+    function escapeHtml(s){return s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')}
+
+    function renderList(list){
+      glossaryList.innerHTML = '';
+      if(list.length === 0){ emptyState.style.display = 'block'; return; } else { emptyState.style.display = 'none' }
+      list.sort((a,b)=> a.term.localeCompare(b.term, 'es', {sensitivity:'base'}));
+      list.forEach(item=>{
+        const card = document.createElement('article');
+        card.className = 'card';
+        const tag = document.createElement('div'); tag.className='tag'; tag.textContent=item.term.charAt(0).toUpperCase();
+        const meta = document.createElement('div'); meta.className='meta';
+        const termRow = document.createElement('div'); termRow.className='term';
+        const h = document.createElement('h3'); h.innerHTML = highlight(item.term, searchInput.value);
+        termRow.appendChild(h);
+        const desc = document.createElement('div'); desc.className='desc'; desc.innerHTML = highlight(item.desc, searchInput.value);
+        const ref = document.createElement('div'); ref.className='ref'; ref.textContent = `Referencia: ${item.ref}`;
+        meta.appendChild(termRow); meta.appendChild(desc); meta.appendChild(ref);
+        card.appendChild(tag); card.appendChild(meta);
+        glossaryList.appendChild(card);
+      });
+    }
+
+    searchInput.addEventListener('input', ()=>{
+      const q = normalizeText(searchInput.value);
+      if(!q){ renderList(glossaryData); return }
+      const filtered = glossaryData.filter(i => {
+        return normalizeText(i.term).includes(q) || normalizeText(i.desc||'').includes(q) || normalizeText(i.ref||'').includes(q);
+      });
+      renderList(filtered);
+    });
+
+    loadData();
+  </script>
+</body>
+</html>

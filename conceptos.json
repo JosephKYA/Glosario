@@ -1,0 +1,432 @@
+[
+  {
+    "term": "Filtrado de datos",
+    "desc": "Selección de datos según criterios específicos.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Foreign key (clave foránea)",
+    "desc": "Relación de integridad entre tablas.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Formularios",
+    "desc": "Interfaces para capturar y mostrar datos.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Fragmentación",
+    "desc": "División de una base de datos en partes distribuidas.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Función agregada",
+    "desc": "Función que combina múltiples valores (ej. MAX, SUM).",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Función hash",
+    "desc": "Algoritmo que transforma datos en un valor único.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Funciones almacenadas",
+    "desc": "Conjunto de instrucciones SQL guardadas en el servidor.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Formato de registro",
+    "desc": "Estructura de cómo se organizan los campos.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Frecuencia de acceso",
+    "desc": "Medida de cuántas veces se consulta un dato.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Full-text search",
+    "desc": "Búsqueda en texto completo dentro de una base de datos.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Gestor de base de datos (DBMS)",
+    "desc": "Software que administra bases de datos.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Granularidad",
+    "desc": "Nivel de detalle de los datos.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Grupo de registros",
+    "desc": "Conjunto de registros relacionados.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Graficación de datos",
+    "desc": "Representación visual de los datos.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Grafos de dependencia",
+    "desc": "Representación de cómo dependen los datos entre sí.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Grid computing",
+    "desc": "Uso de múltiples recursos distribuidos para procesamiento de datos.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Gestión de usuarios",
+    "desc": "Control de permisos de acceso.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Garantía de consistencia",
+    "desc": "Cumplimiento de reglas de integridad.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Gateway de datos",
+    "desc": "Interfaz que conecta distintos sistemas de datos.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Gran volumen de datos (Big Data)",
+    "desc": "Conjuntos de datos extremadamente grandes.",
+    "ref": "Han et al., 2011"
+  },
+  {
+    "term": "Índice",
+    "desc": "Estructura que mejora la velocidad de acceso a los datos en una tabla.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Índice compuesto",
+    "desc": "Índice basado en más de un atributo para mejorar las búsquedas.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Índice hash",
+    "desc": "Técnica que localiza registros a través de valores de función hash.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Índice B-Tree",
+    "desc": "Estructura de árbol balanceado usada para indexación.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Integridad referencial",
+    "desc": "Restricción que asegura coherencia entre tablas relacionadas.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Integridad de entidad",
+    "desc": "Garantía de que cada fila en una tabla es única y no nula.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Normalización",
+    "desc": "Proceso de organizar los datos para reducir redundancia.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Primera forma normal (1FN)",
+    "desc": "Eliminación de atributos multivalorados en una tabla.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Segunda forma normal (2FN)",
+    "desc": "Eliminación de dependencias parciales en una tabla.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Tercera forma normal (3FN)",
+    "desc": "Eliminación de dependencias transitivas.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Boyce-Codd Normal Form (BCNF)",
+    "desc": "Variante estricta de la tercera forma normal.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Cuarta forma normal (4FN)",
+    "desc": "Elimina dependencias multivaluadas.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Quinta forma normal (5FN)",
+    "desc": "Reduce redundancias a través de descomposición de tablas.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Vista",
+    "desc": "Tabla virtual creada a partir de una consulta.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Vista materializada",
+    "desc": "Vista almacenada físicamente en la base de datos.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Join",
+    "desc": "Operación que combina datos de dos o más tablas.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Inner Join",
+    "desc": "Combina filas con coincidencias en ambas tablas.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Outer Join",
+    "desc": "Incluye filas sin coincidencias en al menos una tabla.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Left Join",
+    "desc": "Devuelve todas las filas de la tabla izquierda y las coincidentes de la derecha.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Right Join",
+    "desc": "Devuelve todas las filas de la tabla derecha y las coincidentes de la izquierda.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Full Join",
+    "desc": "Une todas las filas, coincidan o no.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Cross Join",
+    "desc": "Devuelve el producto cartesiano de dos tablas.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Subconsulta",
+    "desc": "Consulta anidada dentro de otra.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Trigger (disparador)",
+    "desc": "Procedimiento que se ejecuta automáticamente ante un evento.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Cursor",
+    "desc": "Recurso que permite recorrer resultados fila por fila.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Transacción",
+    "desc": "Unidad lógica de trabajo en una base de datos.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Commit",
+    "desc": "Confirmación de los cambios realizados en una transacción.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Rollback",
+    "desc": "Reversión de los cambios realizados en una transacción.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Savepoint",
+    "desc": "Marca intermedia dentro de una transacción para posibles retrocesos.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Deadlock (interbloqueo)",
+    "desc": "Situación donde dos transacciones esperan indefinidamente recursos.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Bloqueo (Locking)",
+    "desc": "Mecanismo para controlar acceso concurrente.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Bloqueo compartido",
+    "desc": "Permite lecturas simultáneas pero no escrituras.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Bloqueo exclusivo",
+    "desc": "Permite escritura bloqueando a otros accesos.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Serialización",
+    "desc": "Ejecución de transacciones como si fueran secuenciales.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Planificador de transacciones",
+    "desc": "Módulo que ordena transacciones para evitar conflictos.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Optimización de consultas",
+    "desc": "Proceso de mejorar la eficiencia en consultas SQL.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Plan de ejecución",
+    "desc": "Estrategia que sigue el SGBD para resolver una consulta.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Particionamiento",
+    "desc": "División de tablas grandes en fragmentos más manejables.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Particionamiento horizontal",
+    "desc": "División de filas en varias tablas.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Particionamiento vertical",
+    "desc": "División de columnas en varias tablas.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Replica de datos",
+    "desc": "Copia de datos en diferentes servidores para disponibilidad.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Alta disponibilidad",
+    "desc": "Capacidad de mantener acceso a los datos incluso ante fallos.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Escalabilidad vertical",
+    "desc": "Mejora del rendimiento añadiendo recursos a un servidor.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Escalabilidad horizontal",
+    "desc": "Mejora añadiendo múltiples servidores.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Balanced tree",
+    "desc": "Árbol usado en índices para mejorar acceso a datos.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "OLTP (Online Transaction Processing)",
+    "desc": "Procesamiento en línea de transacciones operativas.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "OLAP (Online Analytical Processing)",
+    "desc": "Procesamiento de consultas analíticas y multidimensionales.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Modelo entidad-relación",
+    "desc": "Modelo conceptual para representar datos.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Diagrama ER",
+    "desc": "Representación gráfica del modelo entidad-relación.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Metadatos",
+    "desc": "Datos que describen otros datos.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Catálogo del sistema",
+    "desc": "Conjunto de metadatos gestionados por el SGBD.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Middleware",
+    "desc": "Software que conecta aplicaciones con bases de datos.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "SQL dinámico",
+    "desc": "Código SQL generado y ejecutado en tiempo de ejecución.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "SQL embebido",
+    "desc": "Instrucciones SQL incluidas dentro de programas host.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Query tuning",
+    "desc": "Ajuste fino de consultas para mejorar su rendimiento.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Análisis de cardinalidad",
+    "desc": "Estimación del número de resultados en operaciones.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Planificador de consultas",
+    "desc": "Módulo que determina la estrategia de ejecución.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Sistema distribuido",
+    "desc": "Conjunto de bases de datos interconectadas en red.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Sharding",
+    "desc": "Estrategia de particionamiento de datos en servidores independientes.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Alta concurrencia",
+    "desc": "Capacidad de manejar múltiples transacciones simultáneamente.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Respaldo incremental",
+    "desc": "Copia de seguridad que almacena solo los cambios recientes.",
+    "ref": "Coronel & Morris, 2019"
+  },
+  {
+    "term": "Respaldo diferencial",
+    "desc": "Copia de seguridad que guarda cambios desde el último respaldo completo.",
+    "ref": "Connolly & Begg, 2015"
+  },
+  {
+    "term": "Recuperación ante desastres",
+    "desc": "Estrategias para restaurar datos tras fallos.",
+    "ref": "Elmasri & Navathe, 2016"
+  },
+  {
+    "term": "Auditoría de datos",
+    "desc": "Registro de operaciones realizadas sobre la base de datos.",
+    "ref": "Date, 2004"
+  },
+  {
+    "term": "Seguridad de datos",
+    "desc": "Conjunto de medidas para proteger información en el sistema.",
+    "ref": "Silberschatz et al., 2020"
+  },
+  {
+    "term": "Control de concurrencia",
+    "desc": "Técnicas para evitar inconsistencias por accesos simultáneos.",
+    "ref": "Coronel & Morris, 2019"
+  }
+]

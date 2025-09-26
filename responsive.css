@@ -1,0 +1,48 @@
+/* responsive.css */
+/* Ajustes exclusivos para móviles */
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+  header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .search {
+    width: 100%;
+    min-width: unset;
+  }
+  .search input {
+    width: 100%;
+    font-size: 15px;
+  }
+  main {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    height: auto;
+    max-height: 220px;
+    overflow-y: auto;
+    margin-bottom: 16px;
+  }
+  .letters {
+    gap: 6px;
+    justify-content: center;
+  }
+  .letter {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+  h1 {
+    font-size: 18px;
+  }
+  p.lead {
+    font-size: 12px;
+  }
+  footer {
+    font-size: 12px;
+    margin-top: 12px;
+  }
+}
